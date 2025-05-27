@@ -23,7 +23,8 @@ Add bin's of java and maven to PATH environment variable
    DELETE /customers/{id} - delete customer by id
    GET /customers - get customer by name or email
    POST /customers create customer
-2. access h2 database console using http://localhost:8080/h2
+   Sample requests/responses are in the swagger documentation
+3. access h2 database console using http://localhost:8080/h2
    h2 database details
    url - jdbc:h2:mem:mydb
    driver class name - org.h2.Driver
