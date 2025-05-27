@@ -2,13 +2,13 @@
 
 # Steps to setup in local
 # Prerequisites:
-Java 17+
-Spring boot 3+
-Spring framework 6+
-Maven 3.8+
-any ide (eg: intellij)
-Add JAVA_HOME and MAVEN_HOME to their home directories as environment variables
-Add bin's of java and maven to PATH environment variable
+Java 17+.
+Spring boot 3+.
+Spring framework 6+.
+Maven 3.8+.
+any ide (eg: intellij).
+Add JAVA_HOME and MAVEN_HOME to their home directories as environment variables.
+Add bin's of java and maven to PATH environment variable.
 # verify
 1. java --version
 2. mvn -v
