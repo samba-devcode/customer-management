@@ -40,7 +40,7 @@ public class CustomerControllerTest {
         ResponseEntity<Void> response = mainClass.createCustomer(createReq);
 
         assertNotNull(response);
-        assertEquals(response.getStatusCode().value(), 204);
+        assertEquals(response.getStatusCode().value(), 200);
 
     }
 

@@ -7,6 +7,8 @@ import com.tcs.assignment.generate.api.CustomersApi;
 import com.tcs.assignment.generate.model.CustomerRequest;
 import com.tcs.assignment.generate.model.CustomerResponse;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,17 +24,21 @@ import java.util.UUID;
 @RestController
 public class CustomerController implements CustomersApi{
 
+    private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
+
     @Autowired
     private CustomerService customerService;
 
     @Override
     public ResponseEntity<Void> createCustomer(CustomerRequest customerRequest) {
+        logger.info("Create customer started");
         customerService.createCustomer(customerRequest);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
 
     @Override
     public ResponseEntity<CustomerResponse> customerById(String id) {
+        logger.info("get customer by id - {}", id);
         Customer customer = customerService.getCustomer(UUID.fromString(id));
         CustomerResponse response = getResponse(id, customer);
         return ResponseEntity.ok(response);
@@ -40,6 +46,7 @@ public class CustomerController implements CustomersApi{
 
     @Override
     public ResponseEntity<CustomerResponse> customerByNameOrEmail(String name, String email) {
+        logger.info("get customer by name/email - {},{}", name, email);
         Customer customer = null;
         if(StringUtils.isNoneEmpty(name) && StringUtils.isEmpty(email)){
             customer = customerService.getCustomerByName(name);
@@ -53,12 +60,14 @@ public class CustomerController implements CustomersApi{
 
     @Override
     public ResponseEntity<Void> deleteCustomer(String id) {
+        logger.info("delete customer by id - {}", id);
         customerService.deleteCustomer(UUID.fromString(id));
         return ResponseEntity.noContent().build();
     }
 
     @Override
     public ResponseEntity<CustomerResponse> updateCustomer(String id, CustomerRequest customerRequest) {
+        logger.info("update customer by id - {}", id);
         return ResponseEntity.ok(getResponse(customerService.updateCustomer(id, customerRequest)));
     }
 
