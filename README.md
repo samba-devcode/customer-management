@@ -13,7 +13,7 @@ Add bin's of java and maven to PATH environment variable
 1. java --version  
 2. mvn -v  
 # Local setup  
-1. install and setup github in local or download zip from this repo  
+1. install and setup git in local or download zip from this repo  
 2. goto project directory and do 'mvn clean install'  
 3. run this application from intellij or from command / terminal(mvn spring-boot:run from command line)  
 # verify  APIs
