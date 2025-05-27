@@ -1,0 +1,151 @@
+openapi: "3.0.0"
+info:
+  title: Customer Management API
+  version: "1.0.0"
+servers:
+  - url: http://localhost:8080/v1
+paths:
+  /customers:
+    post:
+      summary: Create a new customer
+      operationId: createCustomer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+    get:
+      summary: Retrieve a customer by name/email
+      operationId: customerByNameOrEmail
+      parameters:
+        - in: query
+          name: name
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: email
+          required: false
+          schema:
+            type: string
+            format: email
+      responses:
+        '200':
+          description: Customer retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '404':
+          description: Customer not found
+        '500':
+          description: Internal Server Error
+
+  /customers/{id}:
+    get:
+      summary: Retrieve a customer by ID
+      operationId: customerById
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Customer retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '404':
+          description: Customer not found
+        '500':
+          description: Internal Server Error
+    put:
+      summary: Update a customer by ID
+      operationId: updateCustomer
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+      responses:
+        '204':
+          description: Customer Updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '404':
+          description: Customer not found
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+    delete:
+      summary: Delete a customer by ID
+      operationId: deleteCustomer
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Customer Deleted successfully
+        '404':
+          description: Customer not found
+        '500':
+          description: Internal Server Error
+
+components:
+  schemas:
+    CustomerRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        annualSpend:
+          type: number
+          format: double
+        lastPurchaseDate:
+          type: string
+          format: date-time
+      required:
+        - name
+        - email
+    CustomerResponse:
+      allOf:
+        - $ref: '#/components/schemas/CustomerRequest'
+        - type: object
+          properties:
+            id:
+              type: string
+            tier:
+              type: string
+              enum:
+                - Silver
+                - Gold
+                - Platinum
+
