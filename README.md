@@ -16,7 +16,7 @@ Add bin's of java and maven to PATH environment variable
 1. install and setup github in local or download zip from this repo  
 2. goto project directory and do 'mvn clean install'  
 3. run this application from intellij or from command / terminal(mvn spring-boot:run from command line)  
-# verify  
+# verify  APIs
 1. access http://localhost:8080/swagger-ui/index.html from the browser. Following are the endpoints.
    GET /customers/{id} - get customer by id  
    PUT /customers/{id} - update custome by id  
