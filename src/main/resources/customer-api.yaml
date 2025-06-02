@@ -22,8 +22,16 @@ paths:
           description: Not Found
         '400':
           description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
     get:
       summary: Retrieve a customer by name/email
       operationId: customerByNameOrEmail
@@ -48,8 +56,16 @@ paths:
                 $ref: '#/components/schemas/CustomerResponse'
         '404':
           description: Customer not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 
   /customers/{id}:
     get:
@@ -70,8 +86,16 @@ paths:
                 $ref: '#/components/schemas/CustomerResponse'
         '404':
           description: Customer not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
     put:
       summary: Update a customer by ID
       operationId: updateCustomer
@@ -95,10 +119,18 @@ paths:
                 $ref: '#/components/schemas/CustomerResponse'
         '404':
           description: Customer not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '400':
           description: Bad Request
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
     delete:
       summary: Delete a customer by ID
       operationId: deleteCustomer
@@ -113,8 +145,16 @@ paths:
           description: Customer Deleted successfully
         '404':
           description: Customer not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '500':
           description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 
 components:
   schemas:
@@ -148,4 +188,10 @@ components:
                 - Silver
                 - Gold
                 - Platinum
+    ErrorResponse:
+      properties:
+        errorCode:
+          type: integer
+        errorMessage:
+          type: string
 
