@@ -27,13 +27,17 @@
 
 ## Configurations
 H2 database main configurations in the application.properties
-```spring.datasource.url=jdbc:h2:mem:mydb
+```  
+spring.datasource.url=jdbc:h2:mem:mydb
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
-spring.datasource.password=```  
+spring.datasource.password=
+```  
 Spring configurations
-```server.port=8080
-spring.application.name=<service-name>```  
+```  
+server.port=8080
+spring.application.name=<service-name>
+```  
 
 ## verify  APIs
 1. access http://localhost:8080/swagger-ui/index.html from the browser. Following are the endpoints.
