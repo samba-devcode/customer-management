@@ -18,7 +18,7 @@
   type java -version and mvn -v
 4. Both should print java version with extra meta data 
 
-### Local setup  
+### Download source code and run application  
 1. install and setup git in your computer 
 2. download source code using 'git clone https://github.com/samba-devcode/customer-management' from command prompt or download zip from this repo url - https://github.com/samba-devcode/customer-management and extract to your favorite directory.
 3. Import the project to your favorite ide (eg: intellij here)
