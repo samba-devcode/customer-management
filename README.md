@@ -56,10 +56,10 @@ Access swagger ui to test endpoints http://localhost:8080/swagger-ui/index.html
 Note: Sample requests/responses are in the swagger documentation      
 
 ## business use cases  
-1. create customer using POST /customers endpoint and note uuid, naame and email
-2. use GET /customers/{id} to get customer using uuid. In the response has tier
-3. use GET /customers to get customer by name or email
-4. update customer data using PUT /customers/{id} endpoint
-5. finally DELETE /customers/{id} for deleting customer using id
+1. create customer using POST /customers endpoint and note uuid, naame and email  
+2. use GET /customers/{id} to get customer using uuid. In the response has tier  
+3. use GET /customers to get customer by name or email. In the response has tier  
+4. update customer data using PUT /customers/{id} endpoint  
+5. finally DELETE /customers/{id} for deleting customer using id  
 
 
