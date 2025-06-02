@@ -9,15 +9,15 @@ maintains customer details and can able to create or get customer by name/email.
  - Maven 3.8+  
  - any ide (eg: intellij)  
 
-## Setting up and testing application in local
-### Setting up JAVA_HOME and MAVEN_HOME
-#### On Windows
-1. find installation directories of Java and Maven(eg: C:\Program Files\Java and C:\Program Files\Maven)
-2. Set environment variables in the Edit environment variables from Start Menu(Start Menu->Search 'Edit Environment variables'->click 'Edit the system environment variables')
+## Setting up and testing application in local  
+### Setting up JAVA_HOME and MAVEN_HOME  
+#### On Windows  
+1. find installation directories of Java and Maven(eg: C:\Program Files\Java and C:\Program Files\Maven)  
+2. Set environment variables in the Edit environment variables from Start Menu(Start Menu->Search 'Edit Environment variables'->click 'Edit the system environment variables')  
    Click New = JAVA_HOME=java home directory and MAVEN_HOME=maven home directory
-3.Open new command prompt
-  type java -version and mvn -v
-4. Both should print java version with extra meta data 
+3.Open new command prompt  
+  type java -version and mvn -v  
+4. Both should print java version with extra meta data  
 
 ### Download source code and run application  
 1. install and setup git in your computer 
@@ -25,13 +25,13 @@ maintains customer details and can able to create or get customer by name/email.
 3. Import the project to your favorite ide (eg: intellij here)
 4. goto terminal in the intellij and do 'mvn clean install' and build should get success.  
 5. run this application by right clicking on CustomerManagementApplication.java file and clicking on Run <class-name>.main(). or enter this - mvn spring-boot:run in the intellij terminal
-6. check the console logs whether server started on 8080(default port)
+6. check the console logs whether server started on 8080(default port)  
 
-### Run unit tests
+### Run unit tests  
 run junits using 'mvn test'  
 
-### Configurations
-H2 database main configurations in the application.properties
+### Configurations  
+H2 database main configurations in the application.properties  
 ```  
 spring.datasource.url=jdbc:h2:mem:mydb
 spring.datasource.driverClassName=org.h2.Driver
@@ -43,7 +43,7 @@ Spring configurations
 server.port=8080
 spring.application.name=<service-name>
 ```  
-### Swagger url
+### Swagger url  
 Access swagger ui to test endpoints http://localhost:8080/swagger-ui/index.html  
 
 ### testing APIs  
