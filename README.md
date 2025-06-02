@@ -1,4 +1,4 @@
-# customer-management
+# Customer Management Application - maintains customers in the applications
 
 # Steps to setup in local
 ## Prerequisites:
@@ -8,8 +8,9 @@
  - Maven 3.8+  
  - any ide (eg: intellij)  
 
-## Setting up JAVA_HOME and MAVEN_HOME
-### On Windows
+## Setting up and testing application in local
+### Setting up JAVA_HOME and MAVEN_HOME
+#### On Windows
 1. find installation directories of Java and Maven(eg: C:\Program Files\Java and C:\Program Files\Maven)
 2. Set environment variables in the Edit environment variables from Start Menu(Start Menu->Search 'Edit Environment variables'->click 'Edit the system environment variables')
    Click New = JAVA_HOME=java home directory and MAVEN_HOME=maven home directory
@@ -17,7 +18,7 @@
   type java -version and mvn -v
 4. Both should print java version with extra meta data 
 
-## Local setup  
+### Local setup  
 1. install and setup git in your computer 
 2. download source code using 'git clone https://github.com/samba-devcode/customer-management' from command prompt or download zip from this repo url - https://github.com/samba-devcode/customer-management and extract to your favorite directory.
 3. Import the project to your favorite ide (eg: intellij here)
@@ -25,10 +26,10 @@
 5. run this application by right clicking on CustomerManagementApplication.java file and clicking on Run <class-name>.main(). or enter this - mvn spring-boot:run in the intellij terminal
 6. check the console logs whether server started on 8080(default port)
 
-## Run unit tests
+### Run unit tests
 run junits using 'mvn test'  
 
-## Configurations
+### Configurations
 H2 database main configurations in the application.properties
 ```  
 spring.datasource.url=jdbc:h2:mem:mydb
@@ -41,10 +42,10 @@ Spring configurations
 server.port=8080
 spring.application.name=<service-name>
 ```  
-## Swagger url
+### Swagger url
 Access swagger ui to test endpoints http://localhost:8080/swagger-ui/index.html  
 
-## testing APIs  
+### testing APIs  
 1. GET /customers/{id} - get customer by id - pass customer id in the path parameter
 2. PUT /customers/{id} - update custome by id - pass customer id in the path parameter whichever needs to update
 3. DELETE /customers/{id} - delete customer by id - pass customer id in the path parameter whichever needs to delete
