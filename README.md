@@ -1,4 +1,5 @@
-# Customer Management Application - maintains customers in the applications
+# Customer Management Application
+maintains customer details and can able to create or get customer by name/email. Customer tier will be populated based on their spending when user get customer.
 
 # Steps to setup in local
 ## Prerequisites:
